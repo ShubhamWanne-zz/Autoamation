@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script type="text/javascript">
+
+    function addRow(){
+      var URL = document.getElementById('url').value;
+      var fn_name = document.getElementById('fname').value;
+      var input_list = document.getElementById('s_input').value;
+      var desc = document.getElementById('comment').value;
+
+      var table = document.getElementsByTagName('table')[0];
+      var newRow = table.insertRow(table.rows.length);
+
+      var cell1=newRow.insertCell(0);
+      var cell2=newRow.insertCell(1);
+      var cell3=newRow.insertCell(2);
+      var cell4=newRow.insertCell(3);
+
+      cell1.innerHTML = URL;
+      cell2.innerHTML = fn_name;
+      cell3.innerHTML = input_list;
+      cell4.innerHTML = desc;
+
+    }
+
+  </script>
+</head>
+<body>
+  
+<div class="container" id="parent_div">
+  <h1>Identity Governance and Intelligence</h1>
+  <h4>First step to Automation</h4>
+  <br/><br/>
+  <div class="panel panel-default">    
+  <div class="panel-heading">Create Test Cases </div>
+  <div class="panel-body">
+    <div class="form-group">
+      <label for="usr">URL</label>
+      <input type="text" name="url" id="url" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="usr">Test name/Function name </label>
+      <input type="text" name="fname" id="fname" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="usr">Sample input (separated by "|")</label>
+      <input type="text" name="s_input" id="s_input" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="comment">Discription </label>
+      <textarea class="form-control" rows="5" id="comment"></textarea>
+    </div>
+    <button type="button" class="btn btn-default" onclick="addRow();">Create</button>
+  </div>
+  </div>
+  <br/><br/>
+  <div class="panel panel-primary" id="1">
+    <div class="panel-heading">Sample Test Cases</div>
+    <div class="panel-body">
+
+    <table class="table table-hover" id="test_cases_table">
+    <thead>
+      <tr>
+        <th>URL</th>
+        <th>Test name</th>
+        <th>Sample input</th>
+        <th>Descrption</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  </div>
+  </div>
+
+  <button type="button" class="btn btn-success btn-block btn-lg" id="create_test_cases" name="create_test_cases" 
+    onclick="createOutputHtmlLabel();">
+    Submit Testcases
+  </button>
+<br/><br/><br/><br/>
+
+</div>
+</body>
+</html>
